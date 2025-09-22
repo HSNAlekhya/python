@@ -1,21 +1,25 @@
-# Simulate OTP/PIN/PASSWORD Verification System
+# Enhanced Student Grade Tracker Solution
 
-# actual_otp = 8901
-# module random 
-import random
-actual_otp = random.randint(1000,9999)
-print(actual_otp)
+print("="*50)
+print("         Enhanced Student Grade Tracker")
+print("="*50)
 
-attempts = 3
+# Student ID 
+student_id_valid = False
 
-while attempts:
-    (user_otp) = int(input("Enter OTP: "))
-    if len(str(user_otp)) !=4:
-        print("OTP Must be 4 Digits Only")
-    if user_otp == actual_otp:
-        print("Correct OTP - Transaction Success")
-        break
-    attempts = attempts - 1
+while not student_id_valid:
+    student_id = input("Enter ID: ")
     
-else:
-    print("Maximum attempts reached, try after 24 Hours")
+    # check for positive number & non-alphabet (-101)
+    if student_id.startswith("-") and student_id[1:].isdigit():
+        print("Please Enter Positive Numbers Only")
+    elif student_id.isdigit():
+        student_id = int(student_id)
+        if student_id > 0:
+            student_id_valid = True
+        else:
+            print("Zero Not Allowed")
+    else:
+        print("Enter Numbers Only")
+    
+print(student_id)

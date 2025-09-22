@@ -1,110 +1,154 @@
-# Indentation
+# Strings
 
-# normal statements
-print("Hello")
-print("Morning") # IndentationError: unexpected indent
+s1 = 'hello'
+# s1 = hello # invalid string representation 
+print(s1)
 
-# conditional with Indentation
-if 5 > 2:
-    print("yes thats true") # IndentationError: expected an indented block
-    print("incorrect indentation") # IndentationError: unindent does not match any outer indentation level
-    
-if True:
-    print("this is good")
-    print("this is not good")
-    print("this is also good")
+s2 = "hello"
+print(s2)
 
-print("this is also good")
+s3 = '''hello''' 
+print(s3)
 
-# Conditional Statements
+s4 = """hello"""
+print(s4)
 
-# if Statements : runs block of code, if the condition is true
-# if (condition):
-#     statements
-num = -10
-if (num > 0):
-    print("Number is positive")
+# Above are for single line strings 
 
-# check if given number is in range of 10 to 20
-number = 23
-if ( number >= 10 and number <=20 ):
-    print("Number is in range")
+# Below are multi line strings
+# address = "house no 90 
+# zip is 500081
+# city is hyderabad"
 
-# check if number is positive or negative
-num = 10
-if (num > 0):
-    print("Number is positive")
-else:
-    print("Number is negative")
-    
-# Typical Voting App
-age = 20
-if age >= 18:
-    print("You can Vote")
-else:
-    print("You cannot Vote")
+address = """house no 90 
+zip is 500081
+city is hyderabad"""
+print(address)
+
+address = '''house no 90 
+zip is 500081
+city is hyderabad'''
+
+print(address)
+
+# caution
+question = "How are you ?"
+# answer = 'i'm good'
+answer = "i'm good"
+print(answer)
+
+question = "How are you ?"
+# answer = "i"m good"
+answer = 'i"m good'
+print(answer)
+
+question = "How are you ?"
+answer = ''' i"m good' "i'm good '''
+print(answer)
+
+# string 
+text = "python"
+
+# access whole string 
+print(text)
+
+# access character -> Index 
+text = "python"
+# print(text[index]) 
+print(text[0]) 
+print(text[3]) 
+print(text[-2]) 
+
+# length of string
+print(len(text))
+
+    #     0  1  2  3  4  5 (Positive Indexing) (forward)
+    #     p  y  t  h  o  n
+    #    -6 -5 -4 -3 -2 -1 (Negative Indexing) (backward)
+
+# slicing - slice[start: stop: step]
+text = "python"
+# print(text[]) # SyntaxError: invalid syntax
+print(text[:]) # python
+print(text[::]) # python
+print(text[0:3]) # pyt 
+print(text[1:3]) # yt
+print(text[1:3:1]) # yt
+print(text[0:5:2]) # pto
 
 
-# conversions
-data = 3.14
-print(data)
 
-int_converted_data = int(data)
-print(int_converted_data)
+    #     0  1  2  3  4  5 (Positive Indexing) (forward)
+    #     p  y  t  h  o  n
+    #    -6 -5 -4 -3 -2 -1 (Negative Indexing) (backward)
 
-int_converted_data_float = float(int_converted_data)
-print(int_converted_data_float)
+print(text[-4:-1]) # tho
+print(text[-4:-1:1]) # tho
+print(text[-4:-1:-1]) # empty
+print(text[-4:-6:-1]) # ty
+print(text[1:4:-1]) # empty
+print(text[-1:-4:]) # empty
 
-int_data = 10
-int_data_to_str = str(int_data)
-print(int_data_to_str)
+# slicing 
+print(text[::-1]) # nohtyp
 
+text = "python"
+reversed_text = ""
 
+# custom login
+for char in text:
+    reversed_text = char + reversed_text # ...typ
+print(reversed_text)
 
-# input() : used to take input from keyboard
-name = input("Enter Your Name: ")
-print("Welcome: "+name)
+text = "python"
+# print(text[index]) 
+print(text[0]) 
+print(text[3]) 
+# print(text[10]) # IndexError: string index out of range
 
-age = input("Enter Your Age: ")
-age = int(age)
-if age >= 18: # # TypeError: '>=' not supported between instances of 'str' and 'int'
-    print("You can Vote")
-else:
-    print("You cannot Vote")
+print(text[0:6:-1])
 
+# string concatenation
+s = "good"
+m = " morning"
+print(s+m) 
 
-number = int(input("Enter Your Number: "))
-print(number+2)
+a = 10
+b = 20
+print(a+b)
 
-# above using ternary operator
-# variable = value_if_true if condition else value_if_false
-age = int(input("Enter Your Age: "))
-status = "You can Vote" if age >= 18 else "You cannot Vote"
-print(status)
+# string formatting
+age = 30
+# print("My age is: "+age) # TypeError: can only concatenate str (not "int") to str
 
-# elif ladder 
-marks = int(input("Enter Your Marks: "))
-if marks >= 90:
-    print("A")
-elif marks >= 75:
-    print("B")
-elif marks >= 60:
-    print("C")
-elif marks >= 50:
-    print("D")
-elif marks >= 35:
-    print("E")        
-else:
-    print("Failed")
-    
-# match case
-choice = int(input("Enter Your Choice: 1 - Python, 2 - Java, 3 - C#: "))
-match choice:
-    case 1:
-        print("Python")
-    case 2:
-        print("Java")
-    case 3:
-        print("C#")
-    case _:
-        print("Select Only (1-3)")
+# interpolation - {}
+print(f"My age is: {age}")
+print("My age is: ",age) 
+print("My age is: ", +age) 
+print("My age is: "+str(age)) 
+
+print("My age after 5 years would be: ", +age+5) 
+
+# String Repetition 
+laugh = "Haha"
+print(laugh)
+
+laugh_hard = "HahaHahaHahaHahaHahaHahaHahaHahaHaha"
+print(laugh_hard)
+
+laugh_hard = laugh * 20
+print(laugh_hard)
+
+greet = "hello"
+print(greet)
+greet = "Hello"
+print(greet)
+
+# String Immutability 
+# Immutable : cannot be changed 
+greet = "hello"
+print(greet)
+# greet[0] = "H" # TypeError: 'str' object does not support item assignment
+print(greet)
+
+print(dir(greet))
