@@ -130,6 +130,3 @@ print(s1.issuperset(s3))
 # isdisjoint() : check if sets have no common elements 
 print(s1.isdisjoint(s2))
 print(s3.isdisjoint(s1))
-
-
-#addningne wlinefor
