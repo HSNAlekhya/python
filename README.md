@@ -1,5 +1,4 @@
 # python
-my python work
 
 PYTHON: Python is a high-level, general-purpose programming language.
       *Its design philosophy emphasizes code readability* 
